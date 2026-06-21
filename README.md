@@ -129,6 +129,18 @@ print(result.isValid);
 
 ---
 
+## 📦 Empty Validation
+
+```dart
+final result = EmptyValidator.validate(
+  'Hello World',
+);
+
+print(result.isValid);
+```
+
+---
+
 ## 🔢 Number Validation
 
 ```dart
@@ -196,18 +208,19 @@ if (result.isValid) {
 
 # 🎯 Available Validators
 
-| Validator              | Description                  |
-| ---------------------- | ---------------------------- |
-| 📧 EmailValidator      | Validate email addresses     |
-| 🔒 PasswordValidator   | Validate strong passwords    |
-| 📱 PhoneValidator      | Validate phone numbers       |
-| 👤 UsernameValidator   | Validate usernames           |
-| 📝 NameValidator       | Validate names               |
-| 🌐 UrlValidator        | Validate URLs                |
-| 🔢 NumberValidator     | Validate numbers             |
-| 🔐 OtpValidator        | Validate OTP codes           |
+| Validator | Description |
+|------------|-------------|
+| 📧 EmailValidator | Validate email addresses |
+| 🔒 PasswordValidator | Validate strong passwords |
+| 📱 PhoneValidator | Validate phone numbers |
+| 👤 UsernameValidator | Validate usernames |
+| 📝 NameValidator | Validate names |
+| 🌐 UrlValidator | Validate URLs |
+| 📦 EmptyValidator | Validate empty values |
+| 🔢 NumberValidator | Validate numbers |
+| 🔐 OtpValidator | Validate OTP codes |
 | 💳 CreditCardValidator | Validate credit card numbers |
-| 🛠️ CustomValidator    | Validate custom patterns     |
+| 🛠️ CustomValidator | Validate custom patterns |
 
 ---
 

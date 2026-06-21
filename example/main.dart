@@ -53,4 +53,14 @@ void main() {
   );
 
   print('Custom: ${customResult.isValid}');
+
+// Example usage of the EmptyValidator
+  final emptyResult =
+    EmptyValidator.validate(
+  'Hello',
+);
+
+print(
+  'Empty: ${emptyResult.isValid}',
+);
 }
