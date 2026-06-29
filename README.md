@@ -1,10 +1,10 @@
 # 👑 King Validation
 
-A lightweight, fast, and easy-to-use Flutter/Dart validation package that helps you validate user input with clean and reusable validators.
+A lightweight, fast, and easy-to-use Flutter/Dart validation package that helps you validate user input with clean, reusable, and customizable validators.
 
 ---
 
-## ✨ Features
+# ✨ Features
 
 ✅ Email Validation
 
@@ -28,18 +28,24 @@ A lightweight, fast, and easy-to-use Flutter/Dart validation package that helps 
 
 🛠️ Custom Validation
 
+📝 Flutter Form Validators
+
+🎨 Custom Validation Messages
+
+✅ Null Safety
+
 ---
 
-## 🚀 Installation
+# 🚀 Installation
 
 Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  king_validation: ^1.0.0
+  king_validation: ^1.1.0
 ```
 
-Run:
+Install the package:
 
 ```bash
 flutter pub get
@@ -47,7 +53,7 @@ flutter pub get
 
 ---
 
-## 📥 Import
+# 📥 Import
 
 ```dart
 import 'package:king_validation/king_validation.dart';
@@ -190,6 +196,43 @@ print(result.isValid);
 
 ---
 
+# 📝 Flutter Form Validators
+
+Use the built-in form validators directly with `TextFormField`.
+
+```dart
+TextFormField(
+  validator: const EmailFormValidator().call,
+)
+```
+
+Example with another validator:
+
+```dart
+TextFormField(
+  validator: const PasswordFormValidator().call,
+)
+```
+
+---
+
+# 🎨 Custom Error Messages
+
+Override the default validation messages.
+
+```dart
+TextFormField(
+  validator: const EmailFormValidator(
+    messages: {
+      ValidationError.empty: 'Email is required.',
+      ValidationError.invalidEmail: 'Please enter a valid email.',
+    },
+  ).call,
+)
+```
+
+---
+
 # 📊 Validation Result
 
 ```dart
@@ -208,43 +251,45 @@ if (result.isValid) {
 
 # 🎯 Available Validators
 
-| Validator | Description |
-|------------|-------------|
-| 📧 EmailValidator | Validate email addresses |
-| 🔒 PasswordValidator | Validate strong passwords |
-| 📱 PhoneValidator | Validate phone numbers |
-| 👤 UsernameValidator | Validate usernames |
-| 📝 NameValidator | Validate names |
-| 🌐 UrlValidator | Validate URLs |
-| 📦 EmptyValidator | Validate empty values |
-| 🔢 NumberValidator | Validate numbers |
-| 🔐 OtpValidator | Validate OTP codes |
-| 💳 CreditCardValidator | Validate credit card numbers |
-| 🛠️ CustomValidator | Validate custom patterns |
+| Validator              | Description                         |
+| ---------------------- | ----------------------------------- |
+| 📧 EmailValidator      | Validate email addresses            |
+| 🔒 PasswordValidator   | Validate strong passwords           |
+| 📱 PhoneValidator      | Validate phone numbers              |
+| 👤 UsernameValidator   | Validate usernames                  |
+| 📝 NameValidator       | Validate names                      |
+| 🌐 UrlValidator        | Validate URLs                       |
+| 📦 EmptyValidator      | Validate empty values               |
+| 🔢 NumberValidator     | Validate numeric values             |
+| 🔐 OtpValidator        | Validate OTP codes                  |
+| 💳 CreditCardValidator | Validate credit card numbers        |
+| 🛠️ CustomValidator    | Validate custom regular expressions |
 
 ---
 
-## 🧪 Tested
+# 🧪 Quality
 
-✅ Unit Tested
-
-✅ Example Included
-
-✅ Null Safety Support
-
-✅ Flutter Support
-
-✅ Dart Support
+* ✅ 100+ Unit Tests
+* ✅ Flutter Example Included
+* ✅ Null Safety
+* ✅ Flutter Support
+* ✅ Dart Support
 
 ---
 
-## 🤝 Contributing
+# 📂 Example
+
+A complete Flutter example demonstrating every validator and the new Form Validators is available in the `example/` directory.
+
+---
+
+# 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome.
 
 ---
 
-## 📄 License
+# 📄 License
 
 MIT License
 
