@@ -12,45 +12,29 @@ void main() {
     test('Returns default empty message', () {
       const validator = EmailFormValidator();
 
-      expect(
-        validator(''),
-        'This field is required.',
-      );
+      expect(validator(''), 'This field is required.');
     });
 
     test('Returns default invalid email message', () {
       const validator = EmailFormValidator();
 
-      expect(
-        validator('hero@gmail'),
-        'Please enter a valid email address.',
-      );
+      expect(validator('hero@gmail'), 'Please enter a valid email address.');
     });
 
     test('Returns custom empty message', () {
       const validator = EmailFormValidator(
-        messages: {
-          ValidationError.empty: 'Email is required.',
-        },
+        messages: {ValidationError.empty: 'Email is required.'},
       );
 
-      expect(
-        validator(''),
-        'Email is required.',
-      );
+      expect(validator(''), 'Email is required.');
     });
 
     test('Returns custom invalid email message', () {
       const validator = EmailFormValidator(
-        messages: {
-          ValidationError.invalidEmail: 'Invalid email.',
-        },
+        messages: {ValidationError.invalidEmail: 'Invalid email.'},
       );
 
-      expect(
-        validator('hero@gmail'),
-        'Invalid email.',
-      );
+      expect(validator('hero@gmail'), 'Invalid email.');
     });
 
     test('Returns multiple custom messages', () {
@@ -61,15 +45,9 @@ void main() {
         },
       );
 
-      expect(
-        validator(''),
-        'Please enter your email.',
-      );
+      expect(validator(''), 'Please enter your email.');
 
-      expect(
-        validator('hero@gmail'),
-        'Email format is incorrect.',
-      );
+      expect(validator('hero@gmail'), 'Email format is incorrect.');
     });
   });
 }
